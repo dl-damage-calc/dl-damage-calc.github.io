@@ -20,6 +20,15 @@
         .columns {
             margin-bottom: 25px;
         }
+        table, tr, td, th {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 0;
+        }
+        .default {
+            padding: 10px 0;
+            font-weight: bold;
+        }
     </style>
     <title>DL Damage Calc</title>
 </head>
@@ -74,9 +83,411 @@
                 <small>For most enemies in break mode, the modifier will be 0.6. Golems have a 0.3 Break Defense Modifier.</small>
             </div>
         </div>
-        <div>
-            Damage: {{damage}}
+        <div class="default">
+            Base damage: {{damage}}
         </div>
+        <table class="u-full-width">
+            <tbody><tr>
+                <th> Weapon </th>
+                <th> Attack </th>
+                <th> Damage Modifier
+                </th>
+                <th>Number of Hits</th>
+                <th> Damage
+                </th></tr>
+                <tr>
+                <td rowspan="7">Sword</td>
+                <td>Combo 1</td>
+                <td>75%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.75}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>80%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.80}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>95%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.95}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>100%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1}}
+                </td></tr>
+                <tr>
+                <td rowspan="2">Combo 5 (Slash)
+                <p>Combo 5 (AoE Impact)
+                </p>
+                </td>
+                <td>150%
+                </td>
+                <td>1</td>
+                <td rowspan="2">{{damage * 1.5}}
+                </td></tr>
+                <tr>
+                <td>150%
+                </td>
+                <td>1
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>95%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.95}}
+                </td></tr>
+                <tr>
+                <td rowspan="8">Blade</td>
+                <td>Combo 1</td>
+                <td>97%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.97}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>97%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.97}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>63%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.63}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>129%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.29}}
+                </td></tr>
+                <tr>
+                <td>Combo 5 [Uncharged]</td>
+                <td>194%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.94}}
+                </td></tr>
+                <tr>
+                <td rowspan="2">Combo 5 (dash) [Charged]
+                <p>Combo 5 (circle slash)
+                </p>
+                </td>
+                <td>143%
+                </td>
+                <td>1</td>
+                <td rowspan="2">{{damage * 1.43}}
+                </td></tr>
+                <tr>
+                <td>143%
+                </td>
+                <td>1
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>94%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.94}}
+                </td></tr>
+                <tr>
+                <td rowspan="6">Dagger</td>
+                <td>Combo 1</td>
+                <td>75%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.75}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>38%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.38}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>54%
+                </td>
+                <td>3</td>
+                <td>{{damage * 0.54}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>119%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.19}}
+                </td></tr>
+                <tr>
+                <td>Combo 5</td>
+                <td>150%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.50}}
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>85%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.85}}
+                </td></tr>
+                <tr>
+                <td rowspan="6">Axe</td>
+                <td>Combo 1</td>
+                <td>114%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.14}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>122%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.22}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>204%
+                </td>
+                <td>1</td>
+                <td>{{damage * 2.04}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>216%
+                </td>
+                <td>1</td>
+                <td>{{damage * 2.16}}, Draws enemies closer for 0.5 seconds
+                </td></tr>
+                <tr>
+                <td>Combo 5</td>
+                <td>228%
+                </td>
+                <td>1</td>
+                <td>{{damage * 2.28}}
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>73%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.73}}
+                </td></tr>
+                <tr>
+                <td rowspan="6">Lance</td>
+                <td>Combo 1</td>
+                <td>84%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.84}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>45%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.45}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>108%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.08}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>150%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.50}}
+                </td></tr>
+                <tr>
+                <td>Combo 5</td>
+                <td>112%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.12}}
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>89%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.89}}
+                </td></tr>
+                <tr>
+                <td rowspan="6">Bow</td>
+                <td>Combo 1</td>
+                <td>29%
+                </td>
+                <td>3</td>
+                <td>{{damage * 0.29}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>37%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.37}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>42%
+                </td>
+                <td>3</td>
+                <td>{{damage * 0.42}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>63%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.63}}
+                </td></tr>
+                <tr>
+                <td>Combo 5</td>
+                <td>35%
+                </td>
+                <td>5</td>
+                <td>{{damage * 0.35}}
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>90%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.90}}
+                </td></tr>
+                <tr>
+                <td rowspan="7">Wand</td>
+                <td>Combo 1</td>
+                <td>98%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.98}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>53%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.53}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>36%
+                </td>
+                <td>3</td>
+                <td>{{damage * 0.36}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>78%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.78}}
+                </td></tr>
+                <tr>
+                <td rowspan="2">Combo 5 (Big Ball)
+                <p>Combo 5 (Small Projectiles)
+                </p>
+                </td>
+                <td>61.8%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.618}}
+                </td></tr>
+                <tr>
+                <td>36.05%
+                </td>
+                <td>4
+                </td>
+            <td>{{damage * 0.3605}}</td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>100%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 1}}
+                </td></tr>
+                <tr>
+                <td rowspan="6">Staff</td>
+                <td>Combo 1</td>
+                <td>69%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.69}}
+                </td></tr>
+                <tr>
+                <td>Combo 2</td>
+                <td>80%
+                </td>
+                <td>1</td>
+                <td>{{damage * 0.80}}
+                </td></tr>
+                <tr>
+                <td>Combo 3</td>
+                <td>45%
+                </td>
+                <td>2</td>
+                <td>{{damage * 0.45}}
+                </td></tr>
+                <tr>
+                <td>Combo 4</td>
+                <td>150%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.50}}
+                </td></tr>
+                <tr>
+                <td>Combo 5</td>
+                <td>196%
+                </td>
+                <td>1</td>
+                <td>{{damage * 1.96}}
+                </td></tr>
+                <tr>
+                <td>Dash Attack
+                </td>
+                <td>80%
+                </td>
+                <td>1
+                </td>
+                <td>{{damage * 0.80}}
+                </td></tr></tbody>
+        </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script src="app.js"></script>
