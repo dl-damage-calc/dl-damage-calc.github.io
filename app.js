@@ -2,8 +2,6 @@ var app = new Vue({
     el: '#app',
     data: {
         adv_str: 0,
-        adv_color: 0,
-        en_color: 2,
         en_def: 10,
         en_def_ch: 0,
         spread: 1,
@@ -17,10 +15,28 @@ var app = new Vue({
         adv_str () {
             this.count()
         },
-        adv_color () {
+        adv_def () {
             this.count()
         },
-        en_color () {
+        en_def () {
+            this.count()
+        },
+        en_def_ch () {
+            this.count()
+        },
+        spread () {
+            this.count()
+        },
+        modifer () {
+            this.count()
+        },
+        crit () {
+            this.count()
+        },
+        pun () {
+            this.count()
+        },
+        cut () {
             this.count()
         }
     },
