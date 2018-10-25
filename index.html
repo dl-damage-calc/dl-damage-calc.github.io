@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <style>
+        body {
+            padding: 100px 0;
+        }
+        small {
+            font-size: 10px;
+            color: gray;
+        }
+        input {
+            margin-bottom: 0;
+        }
+        .columns {
+            margin-bottom: 25px;
+        }
+    </style>
+    <title>DL Damage Calc</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <h3>DL Damage Calc</h3>
+        <div class="row">
+            <div class="six columns">
+                <label for="">Damage Cut</label>
+                <input type="number" class="u-full-width"v-model="cut">
+                <small>Sum of all resistance based effects. Base: 0.</small>
+            </div>
+            <div class="six columns">
+                <label for="">Skill Modifer</label>
+                <input type="number" class="u-full-width"v-model="modifer">
+                <small>If using a skill, the skill damage multiplier.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="">Damage Spread</label>
+                <input type="number" class="u-full-width" v-model="spread" step="0.05" min="0.95" max="1.05">
+                <small>This usually ranges from 0.95 to 1.05, but for simple calculations, 1 is sufficient.</small>
+            </div>
+            <div class="six columns">
+                <label for="">Adventurer Strength</label>
+                <input type="number" class="u-full-width"v-model="adv_str">
+                <small>STR Boosting Skill(s) x STR Boosting Ab x Wyrmprint Ab x CoAb x <b>Elem Bonus (0.5, 1, 1.5)</b></small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="">Critical</label>
+                <input type="number" class="u-full-width" v-model="crit">
+                <small>1.5 modifier + Sum of other Crit Mods.</small>
+            </div>
+            <div class="six columns">
+                <label for="">Punisher</label>
+                <input type="number" class="u-full-width"v-model="pun">
+                    <small>Sum of all active punisher type skills.</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="">Enemy Defense</label>
+                <input type="number" class="u-full-width" v-model="en_def">
+                <small>Sum of all active punisher type skills. Rare enemies can have a defense range anywhere between 12 to 250.</small>
+            </div>
+            <div class="six columns">
+                <label for="">Enemy Defense Change</label>
+                <input type="number" class="u-full-width"v-model="en_def_ch" step="0.1">
+                <small>For most enemies in break mode, the modifier will be 0.6. Golems have a 0.3 Break Defense Modifier.</small>
+            </div>
+        </div>
+        <div>
+            Damage: {{damage}}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
