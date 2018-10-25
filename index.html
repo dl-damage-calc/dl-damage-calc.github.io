@@ -38,13 +38,13 @@
         <div class="row">
             <div class="six columns">
                 <label for="">Damage Cut</label>
-                <input type="number" class="u-full-width"v-model="cut">
+                <input type="number" class="u-full-width" v-model="cut">
                 <small>Sum of all resistance based effects. Base: 0.</small>
             </div>
             <div class="six columns">
                 <label for="">Skill Modifer</label>
-                <input type="number" class="u-full-width"v-model="modifer">
-                <small>If using a skill, the skill damage multiplier.</small>
+                <input type="number" class="u-full-width" v-model="modifer">
+                <small>If using a skill, the skill damage multiplier. <br> Example: Deals 1 hit of 679% water damage to the target and nearby enemies. Into 6.79 number.</small>
             </div>
         </div>
         <div class="row">
@@ -62,13 +62,13 @@
         <div class="row">
             <div class="six columns">
                 <label for="">Critical</label>
-                <input type="number" class="u-full-width" v-model="crit">
-                <small>1.5 modifier + Sum of other Crit Mods.</small>
+                <input type="number" class="u-full-width" v-model="crit" min="1" step="0.5">
+                <small>1.5 modifier + Sum of other Crit Mods. 1 without crit.</small>
             </div>
             <div class="six columns">
                 <label for="">Punisher</label>
                 <input type="number" class="u-full-width"v-model="pun">
-                    <small>Sum of all active punisher type skills.</small>
+                    <small>Sum of all active punisher type skills. <br> Example: Increases damage to enemies in break state by 25%. Into 1.25 number.</small>
             </div>
         </div>
         <div class="row">
