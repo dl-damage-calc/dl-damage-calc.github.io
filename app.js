@@ -40,15 +40,9 @@ var app = new Vue({
             this.count()
         }
     },
-    computed: {
-        adv () {
-            return this.adv_list[this.adv_adv][this.en_adv]
-        }
-    },
     methods: {
         count () {
             this.damage = 4 / 3 * ((1 - this.cut) * this.modifer * this.spread * this.adv_str * this.crit * this.pun) / (0.8 * (this.en_def - this.en_def_ch))
-            console.log(this.damage)
         }
     }
 })
